@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+</head>
+<body>
+
+<h1>User Form Using Thymleaf</h1>
+<form th:action="@{/register}" th:method="post",th:object="${user}">
+<label for="userName">UserName :</label> <br/>
+<input type="text" name="userName"/> <br/>
+
+<label for="userEmail">UserEmail :</label> <br/>
+<input type="email" name="userEmail"/> <br/>
+
+<label for="userPhoneNumber">UserPhoneNumber :</label> <br/>
+<input type="text" name="userPhoneNumber"/> <br/>
+
+
+<button type="submit">Submit</button>
+<br/>
+<p th:if="${user != null}">UserName : <span th:text="${user.userName}"></span></p>
+<p th:if="${user !=null}">UserEmail:<span th:text="${user.userEmail}"></span></p>
+<p th:if="${user !=null}">UserPhoneNumber:<span th:text="${user.userPhoneNumber}"></span></p>
+
+</body>
+</html>
